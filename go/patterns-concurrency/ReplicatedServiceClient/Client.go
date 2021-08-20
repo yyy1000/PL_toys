@@ -33,13 +33,13 @@ func (c *Client) Call(args Args) Reply {
 			done <- result{id1, c.callOne(c.servers[id1], args)}
 		}(id)
 		select {
-		case r:=<-done:
+		case r := <-done:
 			return r.reply
 		case <-t.C:
 			//timeout
 			t.Reset(timeout)
 		}
 	}
-	r:=<-done
+	r := <-done
 	return r.reply
 }
