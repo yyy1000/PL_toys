@@ -17,6 +17,7 @@ type PubSub interface {
 
 	Cancel(c chan<- Event)
 }
+
 /*
 type Server struct {
 	mu  sync.Mutex
