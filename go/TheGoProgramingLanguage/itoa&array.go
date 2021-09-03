@@ -18,14 +18,15 @@ const (
 	EUP
 )
 
+// slice is not comparable, except for []byte
+// the only legal slice comparison is nil
 
-
-func main(){
+func main() {
 	const GoUsage = `Go is a tool for managing Go source code.
 Usage:
 go command [arguments]
 ...`
 	fmt.Print(GoUsage)
 	symbol := [...]string{USD: "$", EUP: "9", RMB: "¥"}
-	fmt.Println(RMB,symbol[RMB])
+	fmt.Println(RMB, symbol[RMB])
 }
